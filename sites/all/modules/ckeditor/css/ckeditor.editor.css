@@ -22,3 +22,8 @@ table.cke_editor fieldset {
 .cke.cke_panel {
     visibility: visible;
 }
+
+/* Added by Panagis */
+.cke_dialog_page_contents {
+    height: 100% !important;
+}

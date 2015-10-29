@@ -8,6 +8,9 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
  If you don't do this, you may notice that browser is ignoring all your changes.
  */
 CKEDITOR.editorConfig = function(config) {
+  config.extraPlugins += (config.extraPlugins ? ',NodeEmbed' : 'NodeEmbed' );
+CKEDITOR.plugins.addExternal('NodeEmbed', Drupal.settings.ckeditor.module_path+'/plugins/NodeEmbed/');  
+
   config.indentClasses = [ 'rteindent1', 'rteindent2', 'rteindent3', 'rteindent4' ];
 
   // [ Left, Center, Right, Justified ]
@@ -80,8 +83,9 @@ Drupal.settings.cke_toolbar_DrupalAdvanced = [
   ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','RemoveFormat'],
   ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
   ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl'],
-  ['Link','Unlink','Anchor','Linkit','LinkToNode','LinkToMenu']
+  ['Link','Unlink','NodeEmbed','Anchor','Linkit','LinkToNode','LinkToMenu']
 ];
+
 
 // Toolbar definition for all buttons
 Drupal.settings.cke_toolbar_DrupalFull = [
@@ -93,10 +97,11 @@ Drupal.settings.cke_toolbar_DrupalFull = [
   ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','RemoveFormat'],
   ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
   ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl','-','Language'],
-  ['Link','Unlink','Anchor','Linkit','LinkToNode', 'LinkToMenu'],
+  ['Link','Unlink','NodeEmbed','Anchor','Linkit','LinkToNode', 'LinkToMenu'],
   '/',
   ['Format','Font','FontSize'],
   ['TextColor','BGColor'],
   ['Maximize', 'ShowBlocks'],
   ['DrupalBreak', 'DrupalPageBreak']
 ];
+
